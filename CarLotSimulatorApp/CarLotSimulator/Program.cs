@@ -22,7 +22,40 @@ namespace CarLotSimulator
 
             // Set the properties utilizing the 3 different ways we learned about, one way for each car
 
+            Carlot lot = new Carlot();
+
+            
+            Car bmw = new Car();
+            lot.CarList.Add(bmw);
+            bmw.Year = 2003;
+            bmw.Make = "bmw";
+            bmw.Model = "328i";
+            bmw.EngineNoise = "Waaw!";
+            bmw.HonkNoise = "Beeeep";
+            bmw.IsDriveable = true;
+
+            bmw.MakeEngineNoise();
+            bmw.MakeHonkNoise();
+
+            Car celica = new Car() { Year = 1999, Make = "Toyota", Model = "Celica", EngineNoise = "N/A", HonkNoise = "Whomp" };
+            lot.CarList.Add(celica);
+
+
+            celica.MakeEngineNoise();
+            celica.MakeHonkNoise();
+
+            Car Titan = new Car(2020, "Nissan", "Titan", "N/A", "Whaaaank");
+            lot.CarList.Add(Titan);
+
+            Titan.MakeEngineNoise();
+            Titan.MakeHonkNoise();
+
             //*************BONUS X 2*************//
+
+            foreach (var car in lot.CarList)
+            {
+                Console.WriteLine($"Year :{car.Year}, Make: {car.Make} Model: {car.Model}");
+            }
 
             //Create a CarLot class
             //It should have at least one property: a List of cars
